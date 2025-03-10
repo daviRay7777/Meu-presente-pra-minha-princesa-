@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Princesa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            color: #d63384;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #contador {
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .galeria {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .galeria img {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .mensagem {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d63384;
+            color: white;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Para Minha Princesa ❤️</h1>
+
+    <p>
+        Eu te amo, meu amor. Você é meu maior presente e, estando ao seu lado, eu me sinto o homem mais feliz desse mundo.  
+        Você é minha princesa, minha companheira. Eu te amo muito e não quero nunca mais que a gente se afaste.
+    </p>
+
+    <div id="contador"></div>
+
+    <h2>Nossas Memórias 📸</h2>
+    <div class="galeria">
+        <img src="foto1.jpg" alt="Foto 1">
+        <img src="foto2.jpg" alt="Foto 2">
+        <img src="foto3.jpg" alt="Foto 3">
+    </div>
+
+    <div class="mensagem">
+        <a href="https://wa.me/seu-numero" style="color: white; text-decoration: none;">
+            Me mande uma mensagem 💬
+        </a>
+    </div>
+
+    <script>
+        function atualizarContador() {
+            const dataInicio = new Date("2024-09-17T00:00:00");
+            const agora = new Date();
+            const diferenca = agora - dataInicio;
+
+            const meses = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 30));
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            const horas = Math.floor(diferenca / (1000 * 60 * 60));
+            const minutos = Math.floor(diferenca / (1000 * 60));
+
+            document.getElementById("contador").innerHTML = 
+                `Estamos juntos há: ${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos`;
+        }
+
+        atualizarContador();
+        setInterval(atualizarContador, 60000);
+    </script>
+
+</body>
+</html>
